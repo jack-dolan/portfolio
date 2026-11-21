@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%_SETUP_%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------------------------
+
+\documentclass[10pt]{extarticle}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage[margin=0.2in]{geometry}
+\usepackage[T1]{fontenc}
+\linespread{0.93}
+\renewcommand{\rmdefault}{cmr}
+
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\diamond$}
+
+\titleformat{\section}{\Large\bfseries}{}{0em}{}[\titlerule]
+
+\titleformat{\subsection}[runin]
+{\bfseries}{}{0em}{}
+\titlespacing{\subsection}
+{0.2em}{0.35em}{0.4em}
+\titlespacing{\section}
+{0.2em}{0.12em}{0.12em}
+
+\titleformat{\subsubsection}[runin]
+{\bfseries}{}{0em}{}
+
+
+%-------------------------------------------------------------------------
+%------------------MAKETITLE RE-DEFINITION--------------------------------
+%-------------------------------------------------------------------------
+
+\renewcommand{\maketitle}{
+{\huge\bfseries\theauthor}\hfill jack@dolanjack.com $|$ linkedin.com/in/jack-dolan2
+
+\vspace{0.2em}
+
+Boston, MA \hfill dolanjack.com $|$ github.com/jack-dolan
+}
+
+%-------------------------------------------------------------------------
+%------------------BULLET SIZE RE-DEFINITION------------------------------
+%-------------------------------------------------------------------------
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+%-------------------------------------------------------------------------
+%------------------BEGIN DOC----------------------------------------------
+%-------------------------------------------------------------------------
+
+\begin{document}
+\title{R\'esum\'e}
+\author{Jack Dolan}
+\maketitle
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%_CONTENT_%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------
+%------------------SUMMARY------------------------------------------------
+%-------------------------------------------------------------------------
+
+\section{Summary}
+\hspace*{-0.4cm}Senior engineer \& technical lead; a decade in platform engineering, cloud infrastructure, and customer enablement:
+    \begin{itemize}
+    \itemsep0em
+    \item \textbf{Platform/Cloud:} Kubernetes \text{\textbar} Docker \text{\textbar} Terraform \text{\textbar} Ansible \text{\textbar} AWS \text{\textbar} GCP \text{\textbar} Azure \text{\textbar} OCI \text{\textbar} GitLab CI/CD \text{\textbar} GitHub Actions \text{\textbar} Prometheus/Grafana
+    \item \textbf{Languages:} Python \text{\textbar} Go \text{\textbar} TypeScript \text{\textbar} Java \text{\textbar} SQL \text{\textbar} C\verb!++!
+    \item \textbf{LLM \& Applied AI:} Gemini/Vertex AI \text{\textbar} LiteLLM \text{\textbar} OpenWebUI \text{\textbar} Claude/OpenAI APIs \text{\textbar} MCP \text{\textbar} RAG \text{\textbar} Eval Design
+    \item \textbf{Full-Stack \& Data:} React \text{\textbar} Node.js \text{\textbar} PostgreSQL \text{\textbar} Redis \text{\textbar} REST/gRPC \text{\textbar} FastAPI \text{\textbar} OpenAPI \text{\textbar} MLflow \text{\textbar} TensorFlow \text{\textbar} PyTorch
+    \item \textbf{Certifications:} Google Cloud Professional Cloud Architect \text{\textbar} AWS Certified Cloud Practitioner \text{\textbar} CompTIA Security\verb!+! (SY0-701) \end{itemize}
+
+%-------------------------------------------------------------------------
+%------------------EXPERIENCE---------------------------------------------
+%-------------------------------------------------------------------------
+
+\section{Experience}
+\begin{itemize}
+    \itemsep0.1em
+    \item \textbf{Senior DevOps Engineer \& Engineering Manager}, Game Plan Tech, Reston, VA\hfill 05/2026 - Present \\ \emph{Cloud modernization for the Defense Logistics Agency: builds GCP infrastructure, guides teams off on-premises/AWS}
+    \begin{itemize}
+        \itemsep0em
+        \item Ships infrastructure and applications into customer-controlled environments, adapting to legacy and business practices while moving them onto automated, repeatable cloud delivery
+        \item Drives the migration off on-premises and AWS onto GCP with Terraform-managed org, project, network, and IAM infrastructure; GKE autoscaling and billing alerts bound capacity and spend
+        \item Brought LLM capability into a government environment twice over: a customer-tailored RAG chat application on Vertex AI and LiteLLM over their full policy corpus, maintained daily, plus a Pi-based agent harness reaching the environment through its Gemini Enterprise endpoints
+        \item Manages 8 engineers: performance, career development, and engineering practices including shift-left CVE gating and a Defect Dojo tracking system
+        \item Applies automated coding agents in and outside CI/CD to code quality, security, and compliance, with human sign-off before merge
+    \end{itemize}
+
+    \item \textbf{Senior Engineering Lead}, Clarity Innovations, Columbia, MD\hfill 02/2024 - 05/2026 \\ \emph{ Technical lead \& manager for cloud-agnostic CI/CD platform serving 100\texttt{+} software teams across AWS/Azure/GCP/OCI}
+    \begin{itemize}
+        \itemsep0em
+        \item Leads customer enablement for 100\verb!+! engineering teams: weekly sessions with 70\verb!+! attendees, 80-150 issues per 2-week sprint against SLAs, and a self-service docs and video library adopted customer-wide
+        \item Architects secure-by-default pipelines for 1-click deploys to AWS/Azure/GCP/OCI across 60\verb!+! multi-env apps; established the org's first auto-scaled runner pattern
+        \item Mentors engineers on DevSecOps practices and leads technical interchanges; 2024 Award for Excellence
+    \end{itemize}
+
+    \item \textbf{Senior Full-Stack Software Engineer \& Tech Lead}, Kessel Run (U.S. Air Force), Boston, MA\hfill 06/2020 - 06/2024 \\ \emph{Led 12-member eng team on mission-critical software for 10K\texttt{+} users, replacing a \$1.6B legacy system}
+    \begin{itemize}
+        \itemsep0em
+        \item Designed and shipped an event-streaming platform (Protocol Buffers, RabbitMQ) handling 10-15k events/day across 15 app teams, with rehydration for full state recovery
+        \item Drove the org's first Kubernetes adoption, deployment patterns, and training for 50\verb!+! engineers; hand-picked for rapid outage response, cutting downtime by 72\%
+    \end{itemize}
+
+    \item \textbf{Developmental Engineering Lead Officer}, U.S. Air Force, Los Angeles, CA\hfill 07/2016 - 06/2020 \\ \emph{Hardware and software engineering lead on GPS integrated circuit and satellite communication programs; led 10-engineer teams, balanced 500+ requirements, supported \$1.8B in program definition}
+
+    \end{itemize}
+
+%-------------------------------------------------------------------------
+%------------------EDUCATION----------------------------------------------
+%-------------------------------------------------------------------------
+
+\section{Education} \begin{itemize}
+    \itemsep0.1em
+    \item \textbf{Master of Science, Computer Science}, Specialization in Machine Learning \hfill 05/2019 - 11/2022\\Georgia Institute of Technology, Atlanta, GA, GPA: 4.0
+    \item \textbf{Bachelor of Science, Computer Engineering} \hfill 09/2012 - 05/2016\\Boston University, Boston, MA  \end{itemize}
+
+%-------------------------------------------------------------------------
+%------------------ADDITIONAL INFO=----------------------------------------------
+%-------------------------------------------------------------------------
+
+\section{Additional Information}
+\begin{itemize}
+    \itemsep0.1em
+    \item \textbf{Projects: }
+    \vspace{-\topsep} \vspace{0.2em}
+    \begin{itemize}
+        \itemsep0em
+        \item Argus: self-hosted uptime and heartbeat monitor in one static Go binary. Six monitor types, append-only observation ledger, public status page, Prometheus metrics, OpenAPI REST API, 330 tests. Live at argus.dolanjack.com
+        \item MLOps Model Platform: production ML serving on self-hosted k3s with FastAPI, MLflow, and Prometheus/Grafana, plus gated multi-arch CI/CD (Python, Kubernetes, AWS)
+        \item Home Rental Automation Platform: production booking-to-check-in automation integrating DocuSign, Seam locks, HOA notices, and cleaner scheduling (FastAPI, PostgreSQL, Dokploy)
+        \item Miasma: privacy protection platform with web scraping, campaign management, and data injection (Python, React, FastAPI, PostgreSQL, Redis)
+        \item Reddit Translation Bot: cloud-deployed translation bot (Python, Telegram API, Google Translate API)
+    \end{itemize} \end{itemize}
+
+%-------------------------------------------------------------------------
+
+\end{document}

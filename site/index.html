@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jack Dolan | Platform and AI Engineering</title>
+  <meta name="description" content="Jack Dolan is a senior DevOps engineer and engineering manager in Boston. He builds cloud platforms and delivery pipelines, and has brought LLM tools into government environments.">
+  <link rel="canonical" href="https://dolanjack.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dolanjack.com/">
+  <meta property="og:title" content="Jack Dolan | Platform and AI Engineering">
+  <meta property="og:description" content="Senior DevOps engineer and engineering manager. Cloud platforms, delivery pipelines, and LLM tools in regulated environments.">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151513" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jack Dolan",
+    "url": "https://dolanjack.com/",
+    "email": "mailto:jack@dolanjack.com",
+    "jobTitle": "Senior DevOps Engineer and Engineering Manager",
+    "address": {"@type": "PostalAddress", "addressLocality": "Boston", "addressRegion": "MA"},
+    "alumniOf": ["Georgia Institute of Technology", "Boston University"],
+    "sameAs": ["https://github.com/jack-dolan", "https://www.linkedin.com/in/jack-dolan2"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="page">
+    <header class="masthead">
+      <h1 class="name">Jack Dolan</h1>
+      <p class="role">Senior DevOps engineer and engineering manager</p>
+      <p class="place">Boston, MA</p>
+
+      <ul class="contact" aria-label="Contact">
+        <li><a href="mailto:jack@dolanjack.com">jack@dolanjack.com</a></li>
+        <li><a href="https://www.linkedin.com/in/jack-dolan2" rel="me">LinkedIn</a></li>
+        <li><a href="https://github.com/jack-dolan" rel="me">GitHub</a></li>
+        <li><a href="/files/Resume-JackDolan.pdf">Resume (PDF)</a></li>
+      </ul>
+
+      <nav class="toc" aria-label="Sections">
+        <a href="#work">Selected work</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="intro" aria-label="Introduction">
+        <p class="lede">I build cloud platforms and the pipelines that ship software onto them, and I lead the teams that run them.</p>
+        <p>I have spent ten years in platform engineering, cloud infrastructure, and helping engineering teams adopt new tools. Right now I am moving a Defense Logistics Agency program off on-premises servers and AWS onto Google Cloud, and I manage the eight engineers doing that work. On the same program I built a chat application that answers questions from the customer's full policy library, using Vertex AI and LiteLLM.</p>
+        <p>Before that I was technical lead for a CI/CD platform used by more than 100 software teams across four clouds, and led a team at Kessel Run that replaced a $1.6B legacy Air Force system.</p>
+
+        <dl class="tools">
+          <div><dt>Platform</dt><dd>Kubernetes, Docker, Terraform, Ansible, GCP, AWS, Azure, OCI, GitLab CI, GitHub Actions, Prometheus, Grafana</dd></div>
+          <div><dt>Languages</dt><dd>Python, Go, TypeScript, Java, SQL, C++</dd></div>
+          <div><dt>Applied AI</dt><dd>Vertex AI and Gemini, LiteLLM, Claude and OpenAI APIs, MCP, retrieval (RAG), evaluation design</dd></div>
+        </dl>
+      </section>
+
+      <section id="work" class="block" aria-labelledby="work-h">
+        <h2 id="work-h" class="label">Selected work</h2>
+
+        <article class="entry">
+          <header class="entry-head">
+            <h3>Arthur</h3>
+            <p class="status">In production since July 2026</p>
+          </header>
+          <p class="summary">A service that handles everything between a confirmed booking and the guest walking in the door, for a short-term rental listed on Airbnb and VRBO.</p>
+          <p>It reads the booking confirmation email, then works through a checklist on its own: it sends the guest a DocuSign registration form, programs a time-limited code on the smart lock, adds the stay to the cleaning company's spreadsheet, and emails the signed form to the HOA inside the HOA's allowed window. Each task has its own state, so at any moment the system can say what has run, what is blocked, and why. A task is locked before it runs, so a button press and a scheduled job can never send the same form twice.</p>
+          <p>Every production change starts with a failing test. The offline test suite needs no credentials or network and runs in CI on every push.</p>
+          <p class="meta"><span>Python, FastAPI, PostgreSQL, APScheduler, Docker, Dokploy</span></p>
+          <p class="links"><a href="https://github.com/jack-dolan/arthur">Source and write-up on GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <header class="entry-head">
+            <h3>Argus</h3>
+            <p class="status">Early alpha, running on my own servers</p>
+          </header>
+          <p class="summary">Self-hosted monitoring for websites and scheduled jobs, in a single Go binary.</p>
+          <p>Argus checks HTTP endpoints, response content, TCP ports, ICMP reachability, and DNS answers, and it alerts when a scheduled job stops sending its heartbeat. It has a browser admin page, a REST API described in OpenAPI, a public status page, and Prometheus metrics. Every check result is written to an append-only record, so the history it shows can be trusted. It stores data in SQLite and needs no hosted account.</p>
+          <p class="meta"><span>Go, SQLite, OpenAPI, Prometheus, Docker</span></p>
+          <p class="links">The source is private for now.</p>
+        </article>
+
+        <article class="entry">
+          <header class="entry-head">
+            <h3>MLOps model platform</h3>
+            <p class="status">Ran for six months; retired August 2026</p>
+          </header>
+          <p class="summary">A template for serving machine learning models on self-hosted infrastructure.</p>
+          <p>The model is deliberately simple. The work is everything around it: a FastAPI serving API, multi-stage Docker builds, deployment to k3s with Kustomize overlays, MLflow experiment tracking with model promotion and rollback, Prometheus and Grafana monitoring, and outside access through a Cloudflare Tunnel. It ran on one small machine for under a dollar a month in cloud costs. The hardware is gone, but CI still lints, type-checks, trains the model, and runs the tests on every push.</p>
+          <p class="meta"><span>Python, FastAPI, k3s, Kustomize, MLflow, Prometheus, Grafana, GitHub Actions, AWS S3</span></p>
+          <p class="links"><a href="https://github.com/jack-dolan/mlops-model-platform">Source on GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <header class="entry-head">
+            <h3>Miasma</h3>
+            <p class="status">Working MVP</p>
+          </header>
+          <p class="summary">A privacy project built on one idea: if data brokers will not reliably delete your data, make the data they keep less accurate.</p>
+          <p>The current version runs opt-out campaigns against a people-search site. It scans for matching records, submits removal requests through browser automation, and tracks each attempt and its outcome in the API and the web interface.</p>
+          <p class="meta"><span>Python, FastAPI, React, Vite, PostgreSQL, Redis, Selenium, Terraform</span></p>
+          <p class="links"><a href="https://github.com/jack-dolan/miasma">Source on GitHub</a></p>
+        </article>
+      </section>
+
+      <section id="experience" class="block" aria-labelledby="exp-h">
+        <h2 id="exp-h" class="label">Experience</h2>
+
+        <article class="job">
+          <header class="job-head">
+            <h3>Senior DevOps Engineer and Engineering Manager</h3>
+            <p class="org">Game Plan Tech</p>
+            <p class="dates">2026 - Present</p>
+          </header>
+          <p>Moving a Defense Logistics Agency program from on-premises servers and AWS to Google Cloud, with the organization, projects, network, and IAM all managed in Terraform. Built a retrieval chat application on Vertex AI and LiteLLM over the customer's policy documents, and an agent setup that reaches the environment through its Gemini Enterprise endpoints. Manage eight engineers, and added vulnerability gates to their pipelines with DefectDojo for tracking.</p>
+        </article>
+
+        <article class="job">
+          <header class="job-head">
+            <h3>Senior Engineering Lead</h3>
+            <p class="org">Clarity Innovations</p>
+            <p class="dates">2024 - 2026</p>
+          </header>
+          <p>Technical lead and manager for a CI/CD platform serving more than 100 software teams across AWS, Azure, GCP, and OCI. Designed secure-by-default pipelines for one-click deploys of 60+ applications and set up the organization's first auto-scaling runners. Ran weekly enablement sessions with 70+ attendees and handled 80 to 150 support issues per sprint. 2024 Award for Excellence.</p>
+        </article>
+
+        <article class="job">
+          <header class="job-head">
+            <h3>Senior Full-Stack Software Engineer and Tech Lead</h3>
+            <p class="org">Kessel Run, U.S. Air Force</p>
+            <p class="dates">2020 - 2024</p>
+          </header>
+          <p>Led a 12-person team building software for more than 10,000 users, replacing a $1.6B legacy system. Designed an event-streaming platform on Protocol Buffers and RabbitMQ that carried 10,000 to 15,000 events a day across 15 application teams. Led the organization's first adoption of Kubernetes and trained more than 50 engineers on it.</p>
+        </article>
+
+        <article class="job">
+          <header class="job-head">
+            <h3>Developmental Engineering Lead Officer</h3>
+            <p class="org">U.S. Air Force</p>
+            <p class="dates">2016 - 2020</p>
+          </header>
+          <p>Hardware and software engineering lead on GPS integrated circuit and satellite communication programs. Led teams of up to ten engineers and managed more than 500 requirements.</p>
+        </article>
+      </section>
+
+      <section id="education" class="block" aria-labelledby="edu-h">
+        <h2 id="edu-h" class="label">Education</h2>
+        <ul class="plain">
+          <li><strong>M.S. Computer Science</strong>, machine learning specialization. Georgia Institute of Technology, 2022. GPA 4.0.</li>
+          <li><strong>B.S. Computer Engineering</strong>. Boston University, 2016.</li>
+        </ul>
+        <h2 class="label label-sub">Certifications</h2>
+        <ul class="plain">
+          <li>Google Cloud Professional Cloud Architect</li>
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>CompTIA Security+</li>
+        </ul>
+      </section>
+
+      <footer class="colophon">
+        <p>This page is plain HTML and CSS, served by nginx on my own Dokploy server and reached through a Cloudflare Tunnel. <a href="https://github.com/jack-dolan/portfolio">Source on GitHub</a>.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
