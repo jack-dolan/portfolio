@@ -38,6 +38,10 @@ cp Resume-JackDolan.pdf ../site/files/
 
 The site runs as an application on my Dokploy server. Dokploy builds the Dockerfile, and a push to `main` deploys it. Cloudflare terminates TLS and sends traffic through a Cloudflare Tunnel to Traefik, which routes it to this container.
 
+## Email address and Cloudflare
+
+Cloudflare's email obfuscation rewrites email addresses and depends on a script it injects. The site's Content Security Policy blocks that script, so the address would show as "[email protected]". The `<!--email_off-->` comments in `index.html` tell Cloudflare to leave those parts alone. Keep them around any email address you add.
+
 ## Fonts
 
 Source Serif 4 and IBM Plex Sans, both under the SIL Open Font License. The license texts are in `site/fonts/`.
